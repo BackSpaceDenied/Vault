@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Models | Your Trading Edge</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-light: #111111;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --card-bg: #1a1a1a;
+            --border: #262626;
+            --premium: #eab308;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f5f5f5, #a3a3a3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .model-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+        
+        .model-title {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .model-desc {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .premium-tag {
+            display: inline-block;
+            background: var(--premium);
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .cta-section {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-subtitle {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+        
+        .btn-premium {
+            background: var(--premium);
+            color: #000;
+        }
+        
+        .btn-premium:hover {
+            background: #ca8a04;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            margin-top: 0;
+            color: var(--accent);
+        }
+        
+        .locked-content {
+            position: relative;
+            filter: blur(4px);
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .locked-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        
+        .locked-text {
+            background: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: 1px solid var(--premium);
+            color: var(--premium);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Models for Trading</h1>
+            <p class="subtitle">Cognitive frameworks used by the world's most successful investors to navigate market complexity and make better decisions</p>
+        </header>
+        
+        <section>
+            <h2>Core Models</h2>
+            <div class="model-grid">
+                <div class="model-card">
+                    <h3 class="model-title">Second-Order Thinking</h3>
+                    <p class="model-desc">Anticipate the long-term consequences of your trades by thinking beyond immediate outcomes. Most traders fail because they only consider first-level effects.</p>
+                </div>
+                
+                <div class="model-card">
+                    <h3 class="model-title">Circle of Competence</h3>
+                    <p class="model-desc">Warren Buffett's framework for staying within your area of expertise. Know what you don't know, and resist operating outside your knowledge boundaries.</p>
+                </div>
+                
+                <div class="model-card">
+                    <h3 class="model-title">Inversion</h3>
+                    <p class="model-desc">Instead of asking how to succeed, ask how you could fail catastrophically. Then systematically eliminate those failure paths.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Premium Models <span class="premium-tag">PRO</span></h2>
+            <div class="model-grid">
+                <div class="model-card locked-content">
+                    <div class="locked-overlay">
+                        <span class="locked-text">PREMIUM CONTENT</span>
+                    </div>
+                    <h3 class="model-title">Margin of Safety</h3>
+                    <p class="model-desc">The cornerstone of value investing. Learn how to calculate and apply appropriate margins across different market conditions and asset classes.</p>
+                </div>
+                
+                <div class="model-card locked-content">
+                    <div class="locked-overlay">
+                        <span class="locked-text">PREMIUM CONTENT</span>
+                    </div>
+                    <h3 class="model-title">Lindy Effect</h3>
+                    <p class="model-desc">Why older technologies, companies, and assets tend to have longer remaining life expectancy. Apply this to crypto, stocks, and macroeconomic trends.</p>
+                </div>
+                
+                <div class="model-card locked-content">
+                    <div class="locked-overlay">
+                        <span class="locked-text">PREMIUM CONTENT</span>
+                    </div>
+                    <h3 class="model-title">Reflexivity</h3>
+                    <p class="model-desc">George Soros's framework for understanding how market perceptions create reality. Identify and exploit self-reinforcing feedback loops.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta-section">
+            <h3 class="cta-title">Unlock the Full Mental Models Vault</h3>
+            <p class="cta-subtitle">Access 20+ premium mental models with detailed breakdowns, case studies, and actionable frameworks to transform your trading psychology.</p>
+            <a href="#" class="btn btn-premium">Get Premium Access</a>
+            <p><small>$29/month or $249/year • 7-day free trial</small></p>
+        </div>
+        
+        <section>
+            <h2>What's Included</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Complete Models Library</h3>
+                    <p>20+ mental models with detailed explanations and trading applications</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Case Studies</h3>
+                    <p>Real-world examples of how these models created (or could have prevented) major wins/losses</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Cheat Sheets</h3>
+                    <p>Quick-reference guides for applying models to your trading process</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Weekly Updates</h3>
+                    <p>New content added weekly with current market applications</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
