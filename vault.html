@@ -1,84 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <title>TradeVault</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="vault-style.css" />
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
-    <script src="app.js" defer></script>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vault Access | TradeVault</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Orbitron', sans-serif;
+                background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+                color: #fff;
+                padding-bottom: 4rem;
+            }
 
-<body>
-    <div class="background"></div>
+            .section {
+                max-width: 900px;
+                margin: 3rem auto;
+                padding: 1rem 2rem;
+                background-color: rgba(255, 255, 255, 0.03);
+                border-radius: 1rem;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+            }
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="chart-container">
-            <img src="candles.svg" alt="Candle Chart" class="chart" height="200px" width="100px" />
-        </div>
-        <h1 class="title">⚡ Build Your Edge with Mental Models & Market Tools</h1>
-        <p class="subtitle">Unlock trading clarity. Access powerful vaults & custom indicators.</p>
-    </section>
+            .section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
 
-    <button class="buttoning" onclick="window.location.href='modelsp.html'"> Enter Vault 🚀</button>
+            .section ul {
+                list-style: disc;
+                padding-left: 1.5rem;
+                margin-bottom: 1rem;
+            }
 
-    <!-- Placeholder Sections -->
-    <section class="models">
-        <h2>Mental Models</h2>
-        <div class="cards">
-            <div class="card">1. First Principles</div>
-            <div class="card">2. Probabilistic Thinking</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-        </div>
-    </section>
+            .section li {
+                margin-bottom: 0.5rem;
+            }
 
+            .cta {
+                background-color: #34d399;
+                color: #000;
+                padding: 0.75rem 1rem;
+                border-radius: 0.75rem;
+                display: inline-block;
+                margin-top: 1rem;
+                font-weight: bold;
+            }
 
-    <section class="models">
-        <h2>Educational Research Action Research Service</h2>
-        <div class="cards">
-            <div class="card">1. First Principles</div>
-            <div class="card">2. Probabilistic Thinking</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-        </div>
-    </section>
+            a {
+                color: #38bdf8;
+            }
 
+            code {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+        </style>
+    </head>
 
+    <body>
 
-    <section class="models">
-        <h2>Sectors Dissected</h2>
-        <div class="cards">
-            <div class="card">1. First Principles</div>
-            <div class="card">2. Probabilistic Thinking</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-        </div>
-    </section>
+        <header class="text-center mt-10">
+            <h1 class="text-3xl font-bold">🚪 Welcome to The Vault</h1>
+            <p class="text-gray-300 mt-2">Access deep insights, mental frameworks, and precision tools designed for traders.
+            </p>
+        </header>
 
+        <!-- Mental Models Section -->
+        <section class="section">
+            <h2>🧠 Mental Models</h2>
+            <p>An introduction to investing frameworks inspired by Charlie Munger’s latticework approach. These models help
+                overcome biases and improve clarity in chaotic markets.</p>
 
-    <section class="models">
-        <h2>FibX Tool Access</h2>
-        <div class="cards">
-            <div class="card">1. First Principles</div>
-            <div class="card">2. Probabilistic Thinking</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-            <div class="card">3. Risk-Reward Calibration</div>
-        </div>
-    </section>
+            <ul>
+                <li><strong>First Principles Thinking:</strong> Break problems into core truths. Used to analyze core
+                    business models beyond surface trends.</li>
+                <li><strong>Probabilistic Thinking:</strong> Focus on expected outcomes rather than certainty. Improve
+                    position sizing and risk control.</li>
+                <li><strong>Risk-Reward Calibration:</strong> Analyze asymmetrical bets where reward outweighs risk. Embrace
+                    Buffett’s rules of “Never lose money.”</li>
+                <li><strong>Other Models:</strong> Circle of Competence, Inversion, Opportunity Cost, Lollapalooza Effect.
+                </li>
+            </ul>
 
-    <!-- More sections can be added here -->
-</body>
+            <p><em>Visuals like infographics and investor quotes recommended for future enhancement.</em></p>
+            <a class="cta" href="modelsp.html">Join TradeVault to apply these models</a>
+        </section>
 
-</html>
+        <!-- Educational Research Action Service -->
+        <section class="section">
+            <h2>📡 Educational Research Action Service</h2>
+            <p>This service bridges raw market data with curated research. Ideal for traders seeking “high-conviction
+                endpoints.”</p>
+
+            <ul>
+                <li><strong>Definition:</strong> Vetted ideas based on deep analysis and timing, not just signals.</li>
+                <li><strong>Selection Criteria:</strong> Combines fundamentals, technicals, and qualitative data.</li>
+                <li><strong>Methodology:</strong> Daily/weekly analysis backed by financials, charts, macro reports.</li>
+                <li><strong>Benefits:</strong> Saves time, lowers risk, improves decisions, and acts as a learning tool.
+                </li>
+            </ul>
+
+            <p><em>Future design: Research flowchart, dashboard mockup, icons for data types.</em></p>
+            <a class="cta" href="modelsp.html">Subscribe for actionable insights</a>
+        </section>
+
+        <!-- Sectors Dissected -->
+        <section class="section">
+            <h2>🔥 Sectors Dissected</h2>
+            <p>Analyze sector rotation, smart money flow, and macro trends to uncover institutional signals.</p>
+
+            <ul>
+                <li><strong>Smart Money Defined:</strong> Institutions and hedge funds that often lead market movements.
+                </li>
+                <li><strong>Analysis Process:</strong> Macroeconomics → Industry Drivers → Competitive Landscape → Valuation
+                    Metrics</li>
+                <li><strong>Insights Provided:</strong> Sector dashboards, top stocks, flow data, and early trend signals.
+                </li>
+                <li><strong>Benefits:</strong> Smarter allocation, early positioning, risk management, and
+                    institutional-level insight.</li>
+            </ul>
+
+            <p><em>Visuals: Heatmaps, flow charts, infographics planned for next phase.</em></p>
+            <a class="cta" href="modelsp.html">Explore Sectors Dissected</a>
+        </section>
+
+        <!-- FibX Tool Access -->
+        <section class="section">
+            <h2>⚒️ FibX Tool Access</h2>
+            <p>Use smart money levels powered by Fibonacci, volume profile, and order flow to gain trading clarity.</p>
+
+            <ul>
+                <li><strong>Smart Money Levels:</strong> Zones where institutions likely engage, based on real-time data.
+                </li>
+                <li><strong>How It Works:</strong> Combines Fibonacci tools, volume/price analysis, and proprietary
+                    algorithms.</li>
+                <li><strong>Key Features:</strong> Clarity, signal confirmation, entry/exit optimization, reduced emotion.
+                </li>
+                <li><strong>Tool Benefits:</strong> Real-time updates, customizable alerts, backtesting support, and
+                    platform integration.</li>
+                <li><strong>Use Cases:</strong> Breakout confirmation, smart stop losses, swing trade validation.</li>
+            </ul>
+
+            <p><em>Showcase: Annotated screenshots and trader testimonials in next release.</em></p>
+            <a class="cta" href="modelsp.html">Get access to FibX today</a>
+        </section>
+
+        <footer class="text-center mt-10 text-gray-400 text-sm">
+            &copy; 2025 TradeVault. All rights reserved.
+        </footer>
+
+    </body>
+
+    </html>
